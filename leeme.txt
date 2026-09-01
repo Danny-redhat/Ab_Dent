@@ -1,0 +1,12 @@
+tecnologias Utilizadas
+- Frontend: HTML, CSS, JavaScript
+- Backend: PHP puro (PDO)
+- Base de Datos: MySQL
+
+requisitos para el desarrollo
+1 Servidor local con soporte para PHP (yo use XAMPP).
+2 Base de datos MySQL.
+
+Credenciales de prueba
+Usuario: abdent@gmail.com
+Contraseña: abdent

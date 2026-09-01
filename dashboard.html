@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Panel de Control - ABDENT</title>
+    <link rel="stylesheet" href="recursos/css/dashboard.css">
+</head>
+<body>
+
+    <nav class="menu-lateral">
+        <div class="logo-clinica">
+            <img src="recursos/img/ABDENT_BLANCO.png" alt="abdent-imagen">
+        </div>
+        
+        <ul class="lista-menu">
+            <li><a href="#" class="activo">Inicio (Resumen)</a></li>
+            <li><a href="pacientes.html">Directorio de Pacientes</a></li>
+            <li><a href="#">Historiales y Consultas</a></li>
+            <li><a href="#">Odontogramas</a></li>
+        </ul>
+
+        <a href="index.html" class="boton-salir">Cerrar Sesión</a>
+    </nav>
+
+    <main class="area-trabajo">
+        
+        <header class="cabecera-dashboard">
+            <h1>Panel Principal</h1>
+            <div class="usuario-actual">
+                <span>Dr. Hector</span> </div>
+        </header>
+
+        <section class="cuadricula-resumen">
+            
+            <div class="tarjeta-estadistica">
+                <h3>Pacientes Registrados</h3>
+                <p class="numero-grande">124</p>
+            </div>
+            
+            <div class="tarjeta-estadistica">
+                <h3>Consultas de Hoy</h3>
+                <p class="numero-grande">8</p>
+            </div>
+            
+            <div class="tarjeta-estadistica">
+                <h3>Historiales Actualizados</h3>
+                <p class="numero-grande">45</p>
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <script src="recursos/js/sesion.js"></script>
+</body>
+</html>

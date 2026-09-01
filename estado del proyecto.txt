@@ -1,0 +1,27 @@
+ESTADO ACTUAL DEL DESARROLLO (Avanzado al 80%)
+
+el sistema tiene implementada toda la estructura base, autenticación y CRUD de pacientes
+
+- Login y Autenticacion con encriptacion (password_hash)
+- Registro de nuevos usuarios (Doctores/Asistentes)
+- Proteccion de sesiones basica en JS (sesion.js)
+- Directorio de Pacientes (crear, listar, buscador y filtros por region)
+- Historial Clinico: creacion y listado de consultas por paciente
+- Gestion de Antecedentes Médicos (CRUD de enfermedades, alergias, etc)
+
+LO QUE FALTA TERMINAR 
+
+1. modulo "Detalles de Consulta" (consulta_detalles.html / js):
+   - ahora la interfaz visual está lista, pero falta conectar el JS con PHP
+   - tarea: Cargar desde la BD los datos de la consulta seleccionada (motivo, fecha)
+   - tarea: Hacer funcional el formulario de "Agregar Tratamiento Realizado". Debe guardar en la BD el tratamiento y su precio, ir sumando el "TOTAL A COBRAR"
+
+2. exportacion a PDF:
+   - tarea: Integrar una libreria (como jsPDF en el frontend o FPDF/Dompdf en PHP) en la vista de consulta_detalles.html
+   - tarea: Crear un boton "Descargar PDF" que genere un reporte con los datos del paciente, los detalles de esa consulta específica y la tabla de costos
+
+3. modulo "Odontograma" (odontograma.html):
+   - ahora la interfaz gráfica, el motor interactivo en JS y los colores de los estados clínicos (caries, coronas, etc.) funcionan perfectamente en el navegador pero falta la mitad sobre los estados clinicos
+   - tarea: crear la tabla en la base de datos para guardar el estado de cada diente
+   - tarea: conectar el boton "Guardar" para enviar el JSON con el estado de las piezas dentales a PHP mediante Fetch
+   - tarea: al cargar la vista del odontograma de un paciente, hacer el Fetch (GET) para repintar los dientes segun lo guardado en la BD

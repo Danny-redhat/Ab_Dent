@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Iniciar Sesión - Clínica Dental</title>
+    <link rel="stylesheet" href="recursos/css/style.css">
+</head>
+<body>
+
+    <div class="contenedor-login">
+        <div class="tarjeta-login">
+            
+            <img src="recursos/img/LOGO_ABDENT.png" alt="LOGO_ABDENT" class="imagen_abdent">
+
+            <h2>Iniciar Sesión</h2>
+            <p>Ingresa tus datos para entrar al sistema</p>
+
+            <form id="formularioLogin">
+                
+                <div class="grupo-input">
+                    <label for="email">Correo Electrónico:</label>
+                    <input type="email" id="email" name="email" required placeholder="tu@correo.com">
+                </div>
+
+                <div class="grupo-input">
+                    <label for="contrasena">Contraseña:</label>
+                    <input type="password" id="contrasena" name="contrasena" required placeholder="********">
+                </div>
+
+                <button type="submit" class="btn-principal">Ingresar</button>
+
+                <div class="enlaces-extra">
+                    ¿Aún no tienes cuenta? <a href="registro.html">Regístrate aquí</a>
+                </div>
+
+                <p id="mensajeAlerta" style="text-align: center; margin-top: 15px; font-weight: bold; font-size: 14px;"></p>
+
+            </form>
+        </div>
+    </div>
+
+    <script src="recursos/js/login.js"></script>
+
+</body>
+</html>

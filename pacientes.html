@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pacientes - ABDENT</title>
+    <link rel="stylesheet" href="recursos/css/dashboard.css">
+</head>
+<body>
+
+    <nav class="menu-lateral">
+        <div class="logo-clinica">
+            <img src="recursos/img/ABDENT_BLANCO.png" alt="abdent-imagen">
+        </div>
+        
+        <ul class="lista-menu">
+            <li><a href="dashboard.html">Inicio (Resumen)</a></li>
+            <li><a href="pacientes.html" class="activo">Directorio de Pacientes</a></li>
+            <li><a href="#">Historiales y Consultas</a></li>
+            <li><a href="#">Odontogramas</a></li>
+        </ul>
+
+        <a href="index.html" class="boton-salir">Cerrar Sesión</a>
+    </nav>
+
+    <main class="area-trabajo">
+        
+        <header class="cabecera-dashboard">
+            <h1>Directorio de Pacientes</h1>
+            <div class="usuario-actual">
+                <span>Dr. Hector</span>
+            </div>
+        </header>
+
+        <div class="controles-pacientes" style="display: flex; justify-content: space-between; margin-bottom: 20px;">
+            <input type="text" id="buscarPaciente" placeholder="🔍 Buscar por Nombre o DNI..." style="padding: 10px; width: 300px; border-radius: 5px; border: 1px solid #ccc;">
+           
+            <select id="filtroRegion" style="padding: 10px; border-radius: 5px; border: 1px solid #ccc; cursor: pointer; color: #2c3e50; font-weight: bold;">
+                <option value="todas">Todas las regiones</option>
+                <option value="Tacna">Tacna</option>
+                <option value="Arica">Arica</option>
+                <option value="Lima">Lima</option>
+            </select>
+
+            <button id="btnNuevoPaciente" style="padding: 10px 20px; background-color: #3498db; color: white; border: none; border-radius: 5px; cursor: pointer; font-weight: bold;">+ Nuevo Paciente</button>
+        </div>
+
+        <div class="contenedor-tabla" style="background: white; padding: 20px; border-radius: 10px; box-shadow: 0 4px 10px rgba(0,0,0,0.05);">
+            <table style="width: 100%; border-collapse: collapse; text-align: left;">
+                <thead>
+                    <tr style="border-bottom: 2px solid #ecf0f1;">
+                        <th style="padding: 12px; color: #2c3e50;">N° Historial</th>
+                        <th style="padding: 12px; color: #2c3e50;">DNI</th>
+                        <th style="padding: 12px; color: #2c3e50;">Paciente</th>
+                        <th style="padding: 12px; color: #2c3e50;">Teléfono</th>
+                        <th style="padding: 12px; color: #2c3e50;">Acciones</th>
+                    </tr>
+                </thead>
+                <tbody id="listaPacientes">
+                    <tr>
+                        <td colspan="5" style="padding: 20px; text-align: center; color: #7f8c8d;">Aún no hay pacientes registrados.</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+    </main>
+
+
+    <div id="modalNuevoPaciente" class="modal-fondo">
+        <div class="modal-contenido">
+            
+            <div class="modal-cabecera">
+                <h2 id="tituloModalPaciente">Registrar Nuevo Paciente</h2>
+                <span class="cerrar-modal" id="btnCerrarModal">&times;</span>
+            </div>
+
+            <form id="formularioPaciente">
+                
+                <input type="hidden" id="id_paciente_editar" value="">
+
+                <div class="cuadricula-form">
+                    
+                    <div class="grupo-input">
+                        <label for="numero_historial">N° Historial Clínico:</label>
+                        <input type="text" id="numero_historial" name="numero_historial" placeholder="Ej: 001-26" required>
+                    </div>
+
+                    <div class="grupo-input">
+                        <label for="dni">DNI / RUT:</label>
+                        <input type="text" id="dni" name="dni" required>
+                    </div>
+
+                    <div class="grupo-input">
+                        <label for="nombre">Nombres:</label>
+                        <input type="text" id="nombre" name="nombre" required>
+                    </div>
+
+                    <div class="grupo-input">
+                        <label for="apellido">Apellidos:</label>
+                        <input type="text" id="apellido" name="apellido" required>
+                    </div>
+
+                    <div class="grupo-input">
+                        <label for="fecha_nacimiento">Fecha de Nacimiento:</label>
+                        <input type="date" id="fecha_nacimiento" name="fecha_nacimiento" required>
+                    </div>
+
+                    <div class="grupo-input">
+                        <label for="telefono">Teléfono / Celular:</label>
+                        <input type="text" id="telefono" name="telefono">
+                    </div>
+
+                    <div class="grupo-input">
+                        <label for="direccion">Dirección:</label>
+                        <input type="text" id="direccion" name="direccion">
+                    </div>
+
+                    <div class="grupo-input">
+                        <label for="region">Región de Procedencia:</label>
+                        <select id="region" name="region">
+                            <option value="Tacna">Tacna</option>
+                            <option value="Arica">Arica</option>
+                            <option value="Lima">Lima</option>
+                            <option value="Otra">Otra</option>
+                        </select>
+                    </div>
+
+                </div> 
+                <div class="modal-pie">
+                    <button type="button" class="btn-cancelar" id="btnCancelarModal">Cancelar</button>
+                    <button type="submit" class="btn-guardar">Guardar Paciente</button>
+                </div>
+                <p id="mensajeModal" style="text-align: center; margin-top: 10px; font-weight: bold;"></p>
+            </form>
+        </div>
+    </div>
+
+    <script src="recursos/js/pacientes.js"></script>
+    <script src="recursos/js/sesion.js"></script>
+
+</body>
+</html>
